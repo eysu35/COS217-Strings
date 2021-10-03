@@ -80,7 +80,7 @@ char *Str_search(const char pcSrc1[], const char pcSrc2[]){
             if (pcSrc1[j] != pcSrc2[j - i]){
                 break;
             }
-            return pcSrc[i];
+            return pcSrc1[i];
         }
 
     return NULL;
