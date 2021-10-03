@@ -59,7 +59,7 @@ int Str_compare(const char pcSrc1[], const char pcSrc2[]){
         if (pcSrc[i] == '\0'){
             return 0;
         }
-    return s[i] - t[i];
+    return pcSrc1[i] - pcSrc2[i];
 }
 /* -----------------------------------------------------------------------------------*/
 
