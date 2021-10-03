@@ -4,11 +4,6 @@
 /* netID: eysu                                                                        */
 /* precept: P04A                                                                      */     
 /* -----------------------------------------------------------------------------------*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <assert.h>
 #include "str.h"
 
 size_t Str_getLength(const char pcSrc[]){
