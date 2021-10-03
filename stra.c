@@ -56,7 +56,7 @@ int Str_compare(const char pcSrc1[], const char pcSrc2[]){
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
-    while (i=0; (pcSrc1[i] == pcSrc2[i]); i++)
+    for (i=0; (pcSrc1[i] == pcSrc2[i]); i++)
         if (pcSrc1[i] == '\0'){
             return 0;
         }
