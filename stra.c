@@ -34,7 +34,7 @@ char *Str_copy(char dest[], const char pcSrc[]){
 }
 /* -----------------------------------------------------------------------------------*/
 
-char *Str_concat(const char pcSrc1[], const char pcSrc2[]){
+char *Str_concat(char pcSrc1[], const char pcSrc2[]){
     int i;
     int length1;
     int length2;
@@ -42,9 +42,10 @@ char *Str_concat(const char pcSrc1[], const char pcSrc2[]){
     assert(pcSrc2 != NULL);
 
     length1 = Str_getLength(pcSrc1);
+    length2 = Str_getLength(pcSrc2);
 
     for (i = 0; i <= length2; i++)
-        pcSrc1[length + i] = pcSrc2[i];
+        pcSrc1[length1 + i] = pcSrc2[i];
 
     return pcSrc1;
 }
