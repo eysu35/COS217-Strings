@@ -64,17 +64,28 @@ int Str_compare(const char pcSrc1[], const char pcSrc2[]){
 }
 /* -----------------------------------------------------------------------------------*/
 
-/* size_t Str_search(const char pcSrc1[], const char pcSrc2[]){
-//     assert(pcSrc1 != NULL);
-//     assert(pcSrc2 != NULL);
-//     size_t length1 = Str_getLength(pcSrc1);
-//     size_t length2 = Str_getLength(pcSrc2);
-//     size_t
+char *Str_search(const char pcSrc1[], const char pcSrc2[]){
+    size_t i;
+    size_t j;
+    size_t length1;
+    size_t length2;
+    assert(pcSrc1 != NULL);
+    assert(pcSrc2 != NULL);
 
-//     for (i = 0; i < length2; i++){
+    length1 = Str_getLength(pcSrc1);
+    length2 = Str_getLength(pcSrc2);
+
+    for (i = 0; i < length1; i++){
+        for (j = i; j < length2 + i; j++){
+            if pcSrc1[j] != pcSrc2[j - i]{
+                break;
+            }
+            return pcSrc[i];
+        }
+
+    return NULL;
         
-//     }
-*/ 
+}
 /* -----------------------------------------------------------------------------------*/
 
 int main(void){
