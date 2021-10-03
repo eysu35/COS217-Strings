@@ -20,60 +20,46 @@ size_t Str_getLength(const char pcSrc[]){
 }
 /* -----------------------------------------------------------------------------------*/
 
-char Str_copy(const char pcSrc[]){
+char *Str_copy(char dest[], const char pcSrc[]){
     size_t length;
     int i;
     assert(pcSrc != NULL);
     length = Str_getLength(pcSrc);
-    char dest[length + 1];
-    for (i = 0; i < length; i++){
+
+    for (i = 0; i <= length; i++){
         dest[i] = pcSrc[i];
     }
-    dest[length] = '\0';  
+
     return dest;
 }
 /* -----------------------------------------------------------------------------------*/
 
-char Str_concat(const char pcSrc1[], const char pcSrc2[]){
-    size_t length1;
-    size_t length2;
+char *Str_concat(const char pcSrc1[], const char pcSrc2[]){
     int i;
-    int j;
+    int length1;
+    int length2;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
-    length1 = Str_getLength(pcSrc1);
-    length2 = Str_getLength(pcSrc2);
-    char dest[length1 + length2 + 1];
 
-    for (i = 0; i < length1; i++){
-        dest[i] = pcSrc1[i];
-    }
-    for (j = 0; j < length2; j++){
-        dest[length1 + i] = pcSrc2[i];
-    }
-    dest[length1 + length2] = '\0';  
-    return dest;
+    length1 = Str_getLength(pcSrc1);
+
+    for (i = 0; i <= length2; i++)
+        pcSrc1[length + i] = pcSrc2[i];
+
+    return pcSrc1;
 }
 /* -----------------------------------------------------------------------------------*/
 
-size_t Str_compare(const char pcSrc1[], const char pcSrc2[]){
+int Str_compare(const char pcSrc1[], const char pcSrc2[]){
+    int i;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
-    size_t length1; 
-    size_t length2; 
-    int val1 = 0;
-    int val2 = 0;
-    int i;
-    int j;
-    length1 = Str_getLength(pcSrc1);
-    length2 = Str_getLength(pcSrc2);
-    for (i = 0; i < length1; i++){
-        val1 += pcSrc1[i];
-    }
-    for (i = 0; i < length2; i++){
-        val2 += pcSrc2[i];
-    }
-    return ((size_t)(val1 - val2));
+
+    while (i=0; pcSrc[i] == pcSrc2[i]; i++)
+        if (pcSrc[i] == '\0'){
+            return 0;
+        }
+    return s[i] - t[i];
 }
 /* -----------------------------------------------------------------------------------*/
 
