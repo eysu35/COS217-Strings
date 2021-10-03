@@ -6,6 +6,10 @@
 /*                                                                                    */
 /* Description: Implement program that mimics the String module               .       */
 /* -----------------------------------------------------------------------------------*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <assert.h>
 
 #ifndef STR_INCLUDED
 #define STR_INCLUDED
@@ -38,7 +42,7 @@ int Str_compare(const char pcSrc1[], const char pcSrc2[]);
 
 /* Take in two strings and return the first occurence of string2 that appears as a 
 substring in string1. Returns null if no match is found.  */
-char *Str_search(char pcSrc1[], const char pcSrc2[]);
+char *Str_search(char pcSrc1[], char pcSrc2[]);
 
 /* -----------------------------------------------------------------------------------*/
 
