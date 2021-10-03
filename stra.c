@@ -22,7 +22,7 @@ size_t Str_getLength(const char pcSrc[]){
 
 char *Str_copy(char dest[], const char pcSrc[]){
     size_t length;
-    int i;
+    size_t i;
     assert(pcSrc != NULL);
     length = Str_getLength(pcSrc);
 
@@ -35,9 +35,9 @@ char *Str_copy(char dest[], const char pcSrc[]){
 /* -----------------------------------------------------------------------------------*/
 
 char *Str_concat(char pcSrc1[], const char pcSrc2[]){
-    int i;
-    int length1;
-    int length2;
+    size_t i;
+    size_t length1;
+    size_t length2;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
@@ -52,12 +52,12 @@ char *Str_concat(char pcSrc1[], const char pcSrc2[]){
 /* -----------------------------------------------------------------------------------*/
 
 int Str_compare(const char pcSrc1[], const char pcSrc2[]){
-    int i;
+    size_t i;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
-    while (i=0; pcSrc[i] == pcSrc2[i]; i++)
-        if (pcSrc[i] == '\0'){
+    while (i=0; (pcSrc1[i] == pcSrc2[i]); i++)
+        if (pcSrc1[i] == '\0'){
             return 0;
         }
     return pcSrc1[i] - pcSrc2[i];
