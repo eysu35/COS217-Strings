@@ -38,7 +38,7 @@ int Str_compare(const char pcSrc1[], const char pcSrc2[]);
 
 /* Take in two strings and return the first occurence of string2 that appears as a 
 substring in string1. Returns null if no match is found.  */
-size_t Str_search(const char pcSrc1[], const char pcSrc2[]);
+char *Str_search(const char pcSrc1[], const char pcSrc2[]);
 
 /* -----------------------------------------------------------------------------------*/
 
