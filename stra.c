@@ -77,13 +77,14 @@ char *Str_search(const char pcSrc1[], const char pcSrc2[]){
 
     for (i = 0; i < length1; i++){
         for (j = i; j < length2 + i; j++){
-            if pcSrc1[j] != pcSrc2[j - i]{
+            if (pcSrc1[j] != pcSrc2[j - i]){
                 break;
             }
             return pcSrc[i];
         }
 
     return NULL;
+    }
         
 }
 /* -----------------------------------------------------------------------------------*/
