@@ -19,20 +19,20 @@ size_t Str_getLength(const char pcSrc[]);
 
 /* Take in a string and return a copy of the string. */
 
-char[] Str_copy(const char pcSrc[]);
+char *Str_copy(char dest[], const char pcSrc[]);
 
 /* -----------------------------------------------------------------------------------*/
 
 /* Take in two strings and concatenate them into one string. */
 
-char[] Str_concat(const char pcSrc1[], const char pcSrc2[]);
+char *Str_concat(char pcSrc1[], const char pcSrc2[]);
 
 /* -----------------------------------------------------------------------------------*/
 
 /* Take in two strings and compare their values. Return a value less than, equal to, or 
 greater than 0 depending if string1 is less than, equal to, or greater than string2. */
 
-size_t Str_compare(const char pcSrc1[], const char pcSrc2); 
+int Str_compare(const char pcSrc1[], const char pcSrc2[]); 
 
 /* -----------------------------------------------------------------------------------*/
 
