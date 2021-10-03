@@ -42,4 +42,4 @@ size_t Str_search(const char pcSrc1[], const char pcSrc2[]);
 
 /* -----------------------------------------------------------------------------------*/
 
-#endif STR_INCLUDED
+#endif
