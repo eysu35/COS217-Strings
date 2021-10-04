@@ -17,16 +17,16 @@ size_t Str_getLength(const char *pcSrc)
 }
 /* -----------------------------------------------------------------------------------*/
 
-char *Str_copy(char *dest, const char *pcSrc){
+char *Str_copy(char *dest, char *pcSrc){
     char *p = dest;
     assert(pcSrc != NULL);
-    while (*p++ = *PcSrc++)
+    while (*p++ = *pcSrc++)
         ;
     return dest;
 }
 /* -----------------------------------------------------------------------------------*/
 
-char *Str_concat(const char *pcSrc1, const char *pcSrc2){
+char *Str_concat(char *pcSrc1, char *pcSrc2){
     char *p = pcSrc1;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
@@ -39,14 +39,14 @@ char *Str_concat(const char *pcSrc1, const char *pcSrc2){
 }
 /* -----------------------------------------------------------------------------------*/
 
-int Str_compare(const char *pcSrc1, const char *pcSrc2){
+int Str_compare(char *pcSrc1, char *pcSrc2){
     char *p1 = pcSrc1;
     char *p2 = pcSrc2;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
     while (*p1++ == *p2++)
-        if *p1 = '\0'{
+        if (*p1 = '\0'){
             return 0;
         }
     return *p1 - *p2;
@@ -60,12 +60,12 @@ char *Str_search(char *pcSrc1, char *pcSrc2){
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
     while (*p1)
-        if (*p1 != *p2) {continue}
+        if (*p1 != *p2) {continue;}
         else {
-            *psubstring = p1;
+            *psubstring = &p1;
             while (*p1++ == *p2++)
-                if (*p2++ == null){
-                    return *psubstring;
+                if (*p2++ == '\0'){
+                    return psubstring;
                 }
         }
     return NULL;
