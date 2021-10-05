@@ -36,8 +36,8 @@ char *Str_concat(char *pcSrc1, const char *pcSrc2){
 
     while (*p1 != '\0')
         p1++;
-    while (*pcSrc != '\0')
-        *(p1++) = *(pcSrc++);
+    while (*pcSrc2 != '\0')
+        *(p1++) = *(pcSrc2++);
     *p1 = '\0';
     return pcSrc1;
 }
