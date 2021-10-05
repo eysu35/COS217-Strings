@@ -54,6 +54,9 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
     if (*p1 == '\0'){
         return -*p2;
     }
+    if (*p2 == '\0'){
+        return *p1;
+    }
     while (*p1 == *p2)
         if (*p1 == '\0'){
             return 0;
