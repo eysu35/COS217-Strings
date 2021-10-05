@@ -86,7 +86,7 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
                     pcSrc1++;
                     p++;
                 }
-                else (*p == '\0'){
+                if (*p == '\0'){
                     return (char*)psubstring;
                 }
             pcSrc1 = psubstring;
