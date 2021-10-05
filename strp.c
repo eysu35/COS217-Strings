@@ -47,9 +47,6 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
-    if (*pcSrc1 == '\0'){
-        return -*pcSrc2;
-    }
     while (*pcSrc1 != '\0')
         if (*pcSrc2 == '\0'){
             return *pcSrc1;
@@ -61,6 +58,9 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
         else{
             return *pcSrc1 - *pcSrc2;
         }
+    if (*pcSrc1 == '\0'){
+        return -*pcSrc2;
+    }
 }
 /* -----------------------------------------------------------------------------------*/
 
