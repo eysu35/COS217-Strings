@@ -70,7 +70,7 @@ char *Str_search(const char pcSrc1[], const char pcSrc2[]){
     length1 = Str_getLength(pcSrc1);
     length2 = Str_getLength(pcSrc2);
 
-    if (length1 == 0) {
+    if (length2 == 0) {
         return (char*)pcSrc1;
     }
     for (i = 0; i < length1; i++){
