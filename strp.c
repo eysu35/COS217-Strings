@@ -89,7 +89,7 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
             if (*p == '\0'){
                 return (char*)psubstring;
             }
-            pcSrc1 = psubstring;
+            pcSrc1 = psubstring + 1;
             p = (char*)pcSrc2;
         }
 
