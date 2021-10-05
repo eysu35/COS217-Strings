@@ -16,43 +16,45 @@ size_t Str_getLength(const char *pcSrc){
 }
 /* -----------------------------------------------------------------------------------*/
 
-char *Str_copy(char *dest, char *pcSrc){
-    char *p = dest;
+char *Str_copy(char *dest, const char *pcSrc){
+    char *p; 
+    assert(dest != NULL);
     assert(pcSrc != NULL);
-    while (*p++ = *pcSrc++)
+    p = dest;
+    while (*p++ == *pcSrc++)
         ;
     return dest;
 }
 /* -----------------------------------------------------------------------------------*/
 
-char *Str_concat(char *pcSrc1, char *pcSrc2){
+char *Str_concat(char *pcSrc1, const char *pcSrc2){
     char *p = pcSrc1;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
     while (*p)
         p++;
-    while (*p++ = *pcSrc2++)
+    while (*p++ == *pcSrc2++)
         ;
     return pcSrc1;
 }
 /* -----------------------------------------------------------------------------------*/
 
-int Str_compare(char *pcSrc1, char *pcSrc2){
+int Str_compare(const char *pcSrc1, const char *pcSrc2){
     char *p1 = pcSrc1;
     char *p2 = pcSrc2;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
     while (*p1++ == *p2++)
-        if (*p1 = '\0'){
+        if (*p1 == '\0'){
             return 0;
         }
     return *p1 - *p2;
 }
 /* -----------------------------------------------------------------------------------*/
 
-char *Str_search(char *pcSrc1, char *pcSrc2){
+char *Str_search(const char *pcSrc1, const char *pcSrc2){
     char *p1 = pcSrc1;
     char *p2 = pcSrc2;
     char *psubstring;
@@ -64,16 +66,12 @@ char *Str_search(char *pcSrc1, char *pcSrc2){
             *psubstring = &p1;
             while (*p1++ == *p2++)
                 if (*p2++ == '\0'){
-                    return psubstring;
+                    return (char*)psubstring;
                 }
         }
     return NULL;
 
 }
 /* -----------------------------------------------------------------------------------*/
-
-int main(void){
-    return 0;
-}
 
 
