@@ -15,33 +15,35 @@
 #define STR_INCLUDED
 
 /* -----------------------------------------------------------------------------------*/
-/* Take in a string and return its length. */
+/* Take in a string pcSrc and return its length. */
 
 size_t Str_getLength(const char pcSrc[]);
 
 /* -----------------------------------------------------------------------------------*/
 
-/* Take in a string and return a copy of the string. */
+/* Take in a string pcSrc and copy its contents into string dest. */
 
 char *Str_copy(char dest[], const char pcSrc[]);
 
 /* -----------------------------------------------------------------------------------*/
 
-/* Take in two strings and concatenate them into one string. */
+/* Take in two strings pcSrc1 and pcSrc2 and concatenate them into one string stored 
+in pcSrc1. */
 
 char *Str_concat(char pcSrc1[], const char pcSrc2[]);
 
 /* -----------------------------------------------------------------------------------*/
 
-/* Take in two strings and compare their values. Return a value less than, equal to, or 
-greater than 0 depending if string1 is less than, equal to, or greater than string2. */
+/* Take in two strings pcSrc1 and pcSrc2 and compare their values. Return a value less 
+than, equal to, or greater than 0 depending if pcSrc2 is less than, equal to, or greater 
+than pcSrc2. */
 
 int Str_compare(const char pcSrc1[], const char pcSrc2[]); 
 
 /* -----------------------------------------------------------------------------------*/
 
-/* Take in two strings and return the first occurence of string2 that appears as a 
-substring in string1. Returns null if no match is found.  */
+/* Take in two strings pcSrc1 and pcSrc2 and return the first occurrence of pcSrc2 that 
+appears as a substring in pcSrc1. Returns null if no match is found.  */
 char *Str_search(const char pcSrc1[], const char pcSrc2[]);
 
 /* -----------------------------------------------------------------------------------*/
