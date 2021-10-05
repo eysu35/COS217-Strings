@@ -21,14 +21,14 @@ size_t Str_getLength(const char pcSrc[]);
 
 /* -----------------------------------------------------------------------------------*/
 
-/* Take in a string pcSrc and copy its contents into string dest. */
+/* Take in a string pcSrc and return a copy of the pcSrc as string dest. */
 
 char *Str_copy(char dest[], const char pcSrc[]);
 
 /* -----------------------------------------------------------------------------------*/
 
 /* Take in two strings pcSrc1 and pcSrc2 and concatenate them into one string stored 
-in pcSrc1. */
+in pcSrc1. Return pcSrc1. */
 
 char *Str_concat(char pcSrc1[], const char pcSrc2[]);
 
