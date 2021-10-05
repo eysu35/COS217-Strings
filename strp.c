@@ -44,14 +44,14 @@ char *Str_concat(char *pcSrc1, const char *pcSrc2){
 /* -----------------------------------------------------------------------------------*/
 
 int Str_compare(const char *pcSrc1, const char *pcSrc2){
-    char *p1;
-    char *p2;
+    /*char *p1;
+    char *p2;*/
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
-    p1 = (char*)pcSrc1;
-    p2 = (char*)pcSrc2;
+    /*p1 = (char*)pcSrc1;
+    p2 = (char*)pcSrc2;*/
 
-    if (*p1 == '\0'){
+/*    if (*p1 == '\0'){
         return -*p2;
     }
     if (*p2 == '\0'){
@@ -63,7 +63,22 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
         }
         p1++;
         p2++;
-    return *p1 - *p2;
+    return *p1 - *p2; */
+
+    if (*pcSrc1 == '\0'){
+        return -*pcSrc2;
+    while (*pcSrc1 != '\0')
+        if (*pcSrc2 == '\0'){
+            return *p1;
+        }
+        else if (*pcSrc1 == *pcSrc2){
+            continue;
+        }
+        else{
+            return *pcSrc1 - *pcSrc2;
+        }
+        pcSrc1++;
+        pcSrc2++;
 }
 /* -----------------------------------------------------------------------------------*/
 
