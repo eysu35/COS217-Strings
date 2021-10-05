@@ -27,7 +27,6 @@ char *Str_copy(char *dest, const char *pcSrc){
         *p1 = *p2;
         p1++;
         p2++;
-    p1++;
     *p1 = '\0';
     return dest;
 }
