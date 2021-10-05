@@ -81,7 +81,3 @@ char *Str_search(const char pcSrc1[], const char pcSrc2[]){
     return NULL;
 }
 /* -----------------------------------------------------------------------------------*/
-
-int main(void){
-    return 0;
-}
