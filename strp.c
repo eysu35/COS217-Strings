@@ -66,19 +66,20 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
 /* -----------------------------------------------------------------------------------*/
 
 char *Str_search(const char *pcSrc1, const char *pcSrc2){
-    char *p1 = (char*)pcSrc1;
-    char *p2 = (char*)pcSrc2;
     char *psubstring;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
-    while (*p1)
-        if (*p1 != *p2) {continue;}
+    while (*pcSrc1 != '\0')
+        if (*pcSrc1 != *pcSrc2) {
+            pcSrc1++;
+        }
         else {
             psubstring = p1;
-            while (*p1++ == *p2++)
-                if (*p2++ == '\0'){
+            while (*(pcSrc1++) == *(pcSrc2++))
+                if (*pcSrc2 == '\0'){
                     return (char*)psubstring;
                 }
+                else{pcSrc1++;}
         }
     return NULL;
 
