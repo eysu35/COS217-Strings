@@ -22,9 +22,7 @@ char *Str_copy(char *dest, const char *pcSrc){
     assert(pcSrc != NULL);
     p1 = dest;
     while (*pcSrc != '\0')
-        *p1 = *pcSrc;
-        p1++;
-        pcSrc++;
+        *(p1++) = *(pcSrc++);
     *p1 = '\0';
     return dest;
 }
