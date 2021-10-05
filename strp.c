@@ -17,15 +17,12 @@ size_t Str_getLength(const char *pcSrc){
 /* -----------------------------------------------------------------------------------*/
 
 char *Str_copy(char *dest, const char *pcSrc){
-    char *p1; 
-    char *p2;
+    char *p; 
     assert(dest != NULL);
     assert(pcSrc != NULL);
-    p1 = dest;
-    p2 = (char*)pcSrc;
-    while (*p2++ != '\0')
-        *p1 = *p2;
-        p1++;
+    p = dest;
+    while (*p++ = *pcSrc++)
+        ;
     return dest;
 }
 /* -----------------------------------------------------------------------------------*/
@@ -37,7 +34,7 @@ char *Str_concat(char *pcSrc1, const char *pcSrc2){
 
     while (*p)
         p++;
-    while (*p++ == *pcSrc2++)
+    while (*p++ = *pcSrc2++)
         ;
     return pcSrc1;
 }
