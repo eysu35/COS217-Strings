@@ -40,23 +40,26 @@ static size_t replaceAndWrite(const char *pcLine,
       return 0;
    }
    else{
-      while (TRUE)
-         p3 = Str_search(pcTo, pcFrom);
-         if (p3 == NULL){
-            while (p1++)
-               printf("%d", *p1);
-            FALSE;
-         }
-         else{
+      p3 = Str_search(pcLine, pcFrom);
+      if (p3 == NULL){
+         while (p1++)
+            printf("%d", *p1);
+      }
+
+      else {
+         while(*p3 != '\0')
             while (p1++ != p3)
                printf("%d", *p1);
             while (p2++ != '\0')
                printf("%d", *p2);
             p1 += skip_len;
-            p2 = pcTo;
+            p2 = (char*)pcTo;
+            p3 = Str_search(p1, pcFrom);
             count++;
-         }
+      }
    }
+      
+
    return count;
 }
 
