@@ -88,6 +88,7 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
                 pcSrc1++;
                 p++;
         }
+        pcSrc1 = psubstring;
         p = (char*)pcSrc2;
     return NULL;
 
