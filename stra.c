@@ -59,7 +59,7 @@ int Str_compare(const char pcSrc1[], const char pcSrc2[]){
 }
 /* -----------------------------------------------------------------------------------*/
 
-char *Str_search(char pcSrc1[], char pcSrc2[]){
+char *Str_search(const char pcSrc1[], const char pcSrc2[]){
     size_t i;
     size_t j;
     size_t length1;
@@ -75,7 +75,7 @@ char *Str_search(char pcSrc1[], char pcSrc2[]){
             if (pcSrc1[j] != pcSrc2[j - i]){
                 break;
             }
-            return &pcSrc1[i];
+            return (char*)&pcSrc1[i];
         }
     }
     return NULL;
