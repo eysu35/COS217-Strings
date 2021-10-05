@@ -70,14 +70,14 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
     if (*pcSrc2 == '\0') {
-        return pcSrc1;
+        return (char*) pcSrc1;
     }
     while (*pcSrc1 != '\0')
         if (*pcSrc1 != *pcSrc2) {
             pcSrc1++;
         }
         else {
-            psubstring = pcSrc1;
+            psubstring = (char*) pcSrc1;
             while (*(pcSrc1++) == *(pcSrc2++))
                 if (*pcSrc2 == '\0'){
                     return (char*)psubstring;
