@@ -1,5 +1,5 @@
 /* -----------------------------------------------------------------------------------*/
-/* stra.c                                                                             */
+/* strp.c                                                                             */
 /* Author: Ellen Su                                                                   */
 /* netID: eysu                                                                        */
 /* precept: P04A                                                                      */
@@ -21,8 +21,9 @@ char *Str_copy(char *dest, const char *pcSrc){
     assert(dest != NULL);
     assert(pcSrc != NULL);
     p = dest;
-    while (*p++ == *pcSrc++)
-        ;
+    while (*pcSrc++ != '\0')
+        *p = *pcSrc;
+        p++;
     return dest;
 }
 /* -----------------------------------------------------------------------------------*/
