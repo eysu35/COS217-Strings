@@ -18,6 +18,7 @@ size_t Str_getLength(const char pcSrc[]){
 char *Str_copy(char dest[], const char pcSrc[]){
     size_t length;
     size_t i;
+    assert(dest != NULL)
     assert(pcSrc != NULL);
     length = Str_getLength(pcSrc);
 
