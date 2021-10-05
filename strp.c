@@ -74,4 +74,6 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
 }
 /* -----------------------------------------------------------------------------------*/
 
-
+int main(void){
+    return 0;
+}
