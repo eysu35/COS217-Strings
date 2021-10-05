@@ -31,21 +31,21 @@ static size_t replaceAndWrite(const char *pcLine,
    int count;
    int skip_len;
 
-   p1 = pcLine;
-   p2 = pcTo;
+   p1 = (char*)pcLine;
+   p2 = (char*)pcTo;
 
    skip_len = (int)Str_getLength(pcLine);
-   if (str.Str_getLength(pcLine) == 0){
+   if (Str_getLength(pcLine) == 0){
       printf(pcLine);
       return 0;
    }
    else{
-      while (true)
+      while (TRUE)
          p3 = Str_search(pcTo, pcFrom);
          if (p3 == NULL){
             while (p1++)
                printf("%d", *p1);
-            break;
+            FALSE;
          }
          else{
             while (p1++ != p3)
