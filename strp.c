@@ -30,16 +30,14 @@ char *Str_copy(char *dest, const char *pcSrc){
 
 char *Str_concat(char *pcSrc1, const char *pcSrc2){
     char *p1;
-    char *p2;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
     p1 = (char*)pcSrc1;
-    p2 = (char*)pcSrc2;
 
-    while (*p1)
-        p1++;
     while (*p1 != '\0')
-        *(p1++) = *(p2++);
+        p1++;
+    while (*pcSrc != '\0')
+        *(p1++) = *(pcSrc++);
     *p1 = '\0';
     return pcSrc1;
 }
