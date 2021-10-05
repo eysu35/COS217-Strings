@@ -76,8 +76,8 @@ char *Str_search(const char pcSrc1[], const char pcSrc2[]){
                 break;
             }
         }
-        if (j == i + length2 - 1){
-            return (char*)pcSrc1[i];
+        if (j == i + length2){
+            return (char*)&pcSrc1[i];
         }
     }
     return NULL;
