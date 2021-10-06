@@ -29,12 +29,11 @@ static size_t replaceAndWrite(const char *pcLine,
    char *p2;
    char *p3;
    int count;
-   const int skip_len;
+   const int skip_len = (int)Str_getLength(pcLine);
 
    p1 = (char*)pcLine;
    p2 = (char*)pcTo;
    p3 = Str_search(pcLine, pcFrom);
-   skip_len = (int)Str_getLength(pcLine);
 
    if (Str_getLength(pcLine) == 0){
       printf(pcLine);
@@ -47,7 +46,7 @@ static size_t replaceAndWrite(const char *pcLine,
       }
 
       else {
-         while(*p3 != NULL)
+         while(p3 != NULL)
             while (p1++ != p3)
                printf("%d", *p1);
             while (p2++ != '\0')
