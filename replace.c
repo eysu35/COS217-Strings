@@ -56,7 +56,7 @@ static size_t replaceAndWrite(const char *pcLine,
          printf("%d", *traverse_pcTo);
       traverse_string += skip_len;
       traverse_pcTo = (char*)pcTo;
-      replace = Str_search(p1, pcFrom);
+      replace = Str_search(traverse_string, pcFrom);
       count++;
    }
    return count;
