@@ -49,17 +49,17 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
 
     while (*pcSrc1 != '\0')
         if (*pcSrc2 == '\0'){
-            return *pcSrc1;
+            return (int)*pcSrc1;
         }
         else if (*pcSrc1 == *pcSrc2){
             pcSrc1++;
             pcSrc2++;
         }
         else{
-            return *pcSrc1 - *pcSrc2;
+            return (int)*pcSrc1 - *pcSrc2;
         }
     if (*pcSrc1 == '\0'){
-        return -*pcSrc2;
+        return (int)-*pcSrc2;
     }
     return 0;
 }
