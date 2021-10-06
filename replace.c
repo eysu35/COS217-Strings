@@ -38,18 +38,16 @@ static size_t replaceAndWrite(const char *pcLine,
    traverse_pcTo = (char*)pcTo;
    replace = Str_search(pcLine, pcFrom);
 
+   /* check if line is empty string, if so, return line and count = 0. */
    if (*pcLine == '\0'){
       printf(pcLine);
-      return 0;
+      return count;
    }
-   
-   while (*traverse_string != '\0'){
-      if (replace == NULL){
-         while (traverse_string++ != '\0')
-            printf("%d", *traverse_string);
-         return count;
-      }
 
+   /* While still MACROS to replace, print line up to pcFrom, then print
+   pcTo. Increment traverse line pointer to start after the replaced
+   characters, reset pcTo pointer, and search for next string to replace. */
+   while (replace != NULL){
       while (traverse_string++ != replace)
          printf("%d", *traverse_string);
       while (traverse_pcTo++ != '\0')
@@ -59,7 +57,14 @@ static size_t replaceAndWrite(const char *pcLine,
       replace = Str_search(traverse_string, pcFrom);
       count++;
    }
-   return count;
+
+   /* when no more strings to replace, print remainder of string and 
+   return count of replacements. */
+   if (replace == NULL){
+      while (traverse_string != '\0')
+         printf("%d", *traverse_string);
+      return count;
+   }
 }
    
 /*--------------------------------------------------------------------*/
