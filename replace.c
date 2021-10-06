@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
    if (*pcFrom == '\0'){
       while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL){
          printf(acLine);
-         fprintf(stderr, "0 replacements\n");
+         fprintf(stderr, "%lu replacements\n", (unsigned long)0);
       }
 
       return 0;
