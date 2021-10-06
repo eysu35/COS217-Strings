@@ -17,12 +17,15 @@ size_t Str_getLength(const char *pcSrc){
 /* -----------------------------------------------------------------------------------*/
 
 char *Str_copy(char *dest, const char *pcSrc){
+    char *copy;
     assert(dest != NULL);
     assert(pcSrc != NULL);
 
+    copy = dest;
+
     while (*pcSrc != '\0')
-        *(dest++) = *(pcSrc++);
-    *dest = '\0';
+        *(copy++) = *(pcSrc++);
+    *copy = '\0';
     return dest;
 }
 /* -----------------------------------------------------------------------------------*/
