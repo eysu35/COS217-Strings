@@ -50,12 +50,14 @@ static size_t replaceAndWrite(const char *pcLine,
    while (replace != NULL){
       while (traverse_string++ != replace)
          printf("%d", *traverse_string);
-      while (traverse_pcTo++ != '\0')
+      while (traverse_pcTo++ != '\0'){
          printf("%d", *traverse_pcTo);
+         count++;
+      }
       traverse_string += skip_len;
       traverse_pcTo = (char*)pcTo;
       replace = Str_search(traverse_string, pcFrom);
-      count++;
+
    }
 
    /* when no more strings to replace, print remainder of string and 
