@@ -79,7 +79,7 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
             pcSrc1++;
         }
         else {
-            // keep track of start of matching chars
+            /* keep track of start of matching chars */
             psubstring = (char*)pcSrc1;
             while (*pcSrc1 == *needle){
                 pcSrc1++;
@@ -90,7 +90,7 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
             }
             
             if (*needle == '\0'){
-                // if reached end of needle but not haystack, return
+                /* if reached end of needle but not haystack, return */
                 return (char*)psubstring;
             }
             pcSrc1 = psubstring + 1;
