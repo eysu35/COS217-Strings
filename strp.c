@@ -17,28 +17,25 @@ size_t Str_getLength(const char *pcSrc){
 /* -----------------------------------------------------------------------------------*/
 
 char *Str_copy(char *dest, const char *pcSrc){
-    char *p; 
     assert(dest != NULL);
     assert(pcSrc != NULL);
-    p = dest;
+
     while (*pcSrc != '\0')
-        *(p++) = *(pcSrc++);
-    *p = '\0';
+        *(dest++) = *(pcSrc++);
+    *dest = '\0';
     return dest;
 }
 /* -----------------------------------------------------------------------------------*/
 
 char *Str_concat(char *pcSrc1, const char *pcSrc2){
-    char *p1;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
-    p1 = (char*)pcSrc1;
 
-    while (*p1 != '\0')
-        p1++;
+    while (*pcSrc1 != '\0')
+        pcSrc1++;
     while (*pcSrc2 != '\0')
-        *(p1++) = *(pcSrc2++);
-    *p1 = '\0';
+        *(pcSrc1++) = *(pcSrc2++);
+    *pcSrc1 = '\0';
     return pcSrc1;
 }
 /* -----------------------------------------------------------------------------------*/
@@ -66,34 +63,38 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
 /* -----------------------------------------------------------------------------------*/
 
 char *Str_search(const char *pcSrc1, const char *pcSrc2){
-    char *p;
+    char *needle;
     char *psubstring;
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
+    // if needle is empty string, return original hayystack
     if (*pcSrc2 == '\0') {
         return (char*)pcSrc1;
     }
-    p = (char*)pcSrc2;
+    needle = (char*)pcSrc2;
+
+    // search through the haystack until reaching the null char
     while (*pcSrc1 != '\0'){
-        if (*pcSrc1 != *p) {
+        if (*pcSrc1 != *needle) {
             pcSrc1++;
         }
         else {
+            // keep track of start of matching chars
             psubstring = (char*)pcSrc1;
-            while (*pcSrc1 == *p){
+            while (*pcSrc1 == *needle){
                 pcSrc1++;
-                p++;
-                if (*pcSrc1 == '\0' && *p == '\0'){
+                needle++;
+                if (*pcSrc1 == '\0' && *needle == '\0'){
                     return (char*)psubstring;
                 }
             }
-
-            if (*p == '\0'){
+            // if reached end of needle but not haystack, return
+            if (*needle == '\0'){
                 return (char*)psubstring;
             }
             pcSrc1 = psubstring + 1;
-            p = (char*)pcSrc2;
+            needle = (char*)pcSrc2;
         }
     }
 
