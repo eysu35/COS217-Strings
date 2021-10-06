@@ -35,7 +35,7 @@ static size_t replaceAndWrite(const char *pcLine,
    p2 = (char*)pcTo;
    p3 = Str_search(pcLine, pcFrom);
 
-   if (Str_getLength(pcLine) == 0){
+   if (*pcLine == '\0'){
       printf(pcLine);
       return 0;
    }
