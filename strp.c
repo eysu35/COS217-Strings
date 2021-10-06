@@ -88,8 +88,9 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
             }
             if (*p == '\0'){
                 return (char*)psubstring;
-            
             }
+            // increment pcSrc1 by 1 so it doesn't get stuck 
+            // checking the same character
             pcSrc1 = psubstring + 1;
             p = (char*)pcSrc2;
         }
