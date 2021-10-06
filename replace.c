@@ -48,10 +48,14 @@ static size_t replaceAndWrite(const char *pcLine,
    pcTo. Increment traverse line pointer to start after the replaced
    characters, reset pcTo pointer, and search for next string to replace. */
    while (replace != NULL){
-      while (traverse_string++ != replace)
+      while (traverse_string != replace){
          printf("%d", *traverse_string);
-      while (*traverse_pcTo++ != '\0'){
+         traverse_string++;
+      }
+
+      while (*traverse_pcTo != '\0'){
          printf("%d", *traverse_pcTo);
+         traverse_pcTo++;
          count++;
       }
       traverse_string += skip_len;
