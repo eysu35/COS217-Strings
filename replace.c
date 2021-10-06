@@ -22,14 +22,17 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   assert(pcLine!= NULL);
-   assert(pcFrom!= NULL);
-   assert(pcTo!= NULL);
    char *p1;
    char *p2;
    char *p3;
-   int count = 0;
-   const int skip_len = (int)Str_getLength(pcLine);
+   int count;
+   int skip_len;
+   assert(pcLine!= NULL);
+   assert(pcFrom!= NULL);
+   assert(pcTo!= NULL);
+   
+   count = 0;
+   skip_len = (int)Str_getLength(pcLine);
 
    p1 = (char*)pcLine;
    p2 = (char*)pcTo;
