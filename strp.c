@@ -68,14 +68,15 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
     assert(pcSrc1 != NULL);
     assert(pcSrc2 != NULL);
 
-    // if needle is empty string, return original hayystack
     if (*pcSrc2 == '\0') {
+    // if needle is empty string, return original haystack
         return (char*)pcSrc1;
     }
     needle = (char*)pcSrc2;
 
-    // search through the haystack until reaching the null char
+    
     while (*pcSrc1 != '\0'){
+    // search through the haystack until reaching the null char
         if (*pcSrc1 != *needle) {
             pcSrc1++;
         }
@@ -89,8 +90,9 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
                     return (char*)psubstring;
                 }
             }
-            // if reached end of needle but not haystack, return
+            
             if (*needle == '\0'){
+            // if reached end of needle but not haystack, return
                 return (char*)psubstring;
             }
             pcSrc1 = psubstring + 1;
