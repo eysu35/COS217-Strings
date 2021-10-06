@@ -22,9 +22,9 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   char *p1;
-   char *p2;
-   char *p3;
+   char *traverse_string;
+   char *traverse_pcTo;
+   char *replace;
    int count;
    int skip_len;
    assert(pcLine!= NULL);
@@ -32,31 +32,31 @@ static size_t replaceAndWrite(const char *pcLine,
    assert(pcTo!= NULL);
    
    count = 0;
-   skip_len = (int)Str_getLength(pcLine);
+   skip_len = (int)Str_getLength(pcFrom);
 
-   p1 = (char*)pcLine;
-   p2 = (char*)pcTo;
-   p3 = Str_search(pcLine, pcFrom);
+   traverse_string = (char*)pcLine;
+   traverse_pcTo = (char*)pcTo;
+   replace = Str_search(pcLine, pcFrom);
 
    if (*pcLine == '\0'){
       printf(pcLine);
       return 0;
    }
    
-   while (*p1 != '\0'){
-      if (p3 == NULL){
-         while (p1++ != '\0')
-            printf("%d", *p1);
+   while (*traverse_string != '\0'){
+      if (replace == NULL){
+         while (traverse_string++ != '\0')
+            printf("%d", *traverse_string);
          return count;
       }
 
-      while (p1++ != p3)
-         printf("%d", *p1);
-      while (p2++ != '\0')
-         printf("%d", *p2);
-      p1 += skip_len;
-      p2 = (char*)pcTo;
-      p3 = Str_search(p1, pcFrom);
+      while (traverse_string++ != replace)
+         printf("%d", *traverse_string);
+      while (traverse_pcTo++ != '\0')
+         printf("%d", *traverse_pcTo);
+      traverse_string += skip_len;
+      traverse_pcTo = (char*)pcTo;
+      replace = Str_search(p1, pcFrom);
       count++;
    }
    return count;
@@ -99,6 +99,4 @@ int main(int argc, char *argv[])
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
       
-
-
 }
