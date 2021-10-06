@@ -56,7 +56,7 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2){
             pcSrc2++;
         }
         else{
-            return (int)*pcSrc1 - *pcSrc2;
+            return (int)(*pcSrc1 - *pcSrc2);
         }
     if (*pcSrc1 == '\0'){
         return (int)-*pcSrc2;
