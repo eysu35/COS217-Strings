@@ -38,8 +38,8 @@ static size_t replaceAndWrite(const char *pcLine,
    replace = Str_search(pcLine, pcFrom);
 
    /* check if line is empty string, if so, return line and count = 0. */
-   if (*pcLine == '\0'){
-      printf(pcLine);
+   if (*pcFrom == '\0'){
+      printf("%s", pcLine);
       return count;
    }
 
