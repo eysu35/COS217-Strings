@@ -85,6 +85,7 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
         }
         else {
             /* keep track of start of matching chars */
+            /* increment pointers to haystack and needle i match */
             psubstring = (char*)pcSrc1;
             while (*pcSrc1 == *needle){
                 pcSrc1++;
