@@ -56,10 +56,9 @@ static size_t replaceAndWrite(const char *pcLine,
       p3 = Str_search(p1, pcFrom);
       count++;
    }
+   return count;
 }
    
-
-
 /*--------------------------------------------------------------------*/
 
 /* If argc is unequal to 3, then write an error message to stderr and
