@@ -75,23 +75,25 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
         return (char*)pcSrc1;
     }
     p = (char*)pcSrc2;
-    while (*pcSrc1 != '\0')
+    while (*pcSrc1 != '\0'){
         if (*pcSrc1 != *p) {
             pcSrc1++;
         }
+
         else {
             psubstring = (char*)pcSrc1;
-            while (*p != '\0')
-                if (*pcSrc1 == *p){
-                    pcSrc1++;
-                    p++;
-                }   
+            while (*pcSrc1 == *p){
+                pcSrc1++;
+                p++;
+            }
             if (*p == '\0'){
                 return (char*)psubstring;
+            
             }
             pcSrc1 = psubstring + 1;
             p = (char*)pcSrc2;
         }
+    }
 
     return NULL;
 
