@@ -76,7 +76,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on strp.c, and what are your
@@ -84,15 +84,22 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
+strp.c: line 93: low priority:
+This area is deeply nested at level 4, consider refactoring
 
-
+This warning required me to restructure my entire search function, but
+since the function is performing well, I did not think that it would be
+beneficial to my learning to address it. I understand that for the 
+future, writing clean code without too much nesting of loops and if
+statements is optimal. I will definitely keep this stylistic tip in 
+mind going forward in the course.
 ------------------------------------------------------------------------
 What warnings does splint generate on replace.c, and what are your
 disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on replace.c, and what are your
@@ -100,13 +107,21 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None.
 
 ------------------------------------------------------------------------
 Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
-
+In this assignment, it is dangerous to use the memory we assume is empty
+during Str_copy and Str_concat. However, I do not think it is possible to 
+assert that the destination memory is large enough. Even if we iterated
+our pointer into those places in memory, we are not sure if other pointers
+are pointing there regardless if those memory spots have values stored. 
+However, if we use the memory allocation tools (calloc, malloc, realloc) 
+that we recently learned about in lecture, we could avoid this problem
+in the future and safely check if the memory we are copying/
+concatenating to is large enough. 
 
 ------------------------------------------------------------------------
