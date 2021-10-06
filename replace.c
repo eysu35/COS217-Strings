@@ -28,7 +28,7 @@ static size_t replaceAndWrite(const char *pcLine,
    char *p1;
    char *p2;
    char *p3;
-   int count;
+   int count = 0;
    const int skip_len = (int)Str_getLength(pcLine);
 
    p1 = (char*)pcLine;
@@ -92,8 +92,15 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
+   if (*pcFrom == '\0'){
+      while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
+         printf(acLine);
+      fprintf(stderr, "0 replacements\n");
+      return 0;
+   }
+
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      uReplaceCount = replaceAndWrite(acLine, pcFrom, pcTo);
+      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
