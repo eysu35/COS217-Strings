@@ -40,7 +40,7 @@ static size_t replaceAndWrite(const char *pcLine,
    /* check if line is empty string, if so, return line and count = 0. */
    if (*pcFrom == '\0'){
       printf("%s", pcLine);
-      return count;
+      return (size_t)count;
    }
 
    /* While still MACROS to replace, print line up to pcFrom, then print
@@ -67,7 +67,7 @@ static size_t replaceAndWrite(const char *pcLine,
       putchar(*traverse_string);
       traverse_string++;
    }
-   return count;
+   return (size_t)count;
 }
    
 /*--------------------------------------------------------------------*/
