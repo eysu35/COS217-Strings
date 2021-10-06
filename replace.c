@@ -63,9 +63,10 @@ static size_t replaceAndWrite(const char *pcLine,
 
    /* when no more strings to replace, print remainder of string and 
    return count of replacements. */
-   while (*traverse_string != '\0')
+   while (*traverse_string != '\0') {
       putchar(*traverse_string);
       traverse_string++;
+   }
    return count;
 }
    
