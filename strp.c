@@ -79,7 +79,6 @@ char *Str_search(const char *pcSrc1, const char *pcSrc2){
         if (*pcSrc1 != *p) {
             pcSrc1++;
         }
-
         else {
             psubstring = (char*)pcSrc1;
             while (*pcSrc1 == *p){
