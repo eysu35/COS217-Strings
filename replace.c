@@ -33,7 +33,6 @@ static size_t replaceAndWrite(const char *pcLine,
    
    count = 0;
    skip_len = (int)Str_getLength(pcFrom);
-
    traverse_string = (char*)pcLine;
    traverse_pcTo = (char*)pcTo;
    replace = Str_search(pcLine, pcFrom);
@@ -49,27 +48,23 @@ static size_t replaceAndWrite(const char *pcLine,
    characters, reset pcTo pointer, and search for next string to replace. */
    while (replace != NULL){
       while (traverse_string != replace){
-         printf("%d", *traverse_string);
+         putchar(*traverse_string);
          traverse_string++;
       }
-
+      count++;
       while (*traverse_pcTo != '\0'){
-         printf("%d", *traverse_pcTo);
+         putchar(*traverse_pcTo);
          traverse_pcTo++;
-         count++;
       }
       traverse_string += skip_len;
       traverse_pcTo = (char*)pcTo;
       replace = Str_search(traverse_string, pcFrom);
-
    }
 
    /* when no more strings to replace, print remainder of string and 
    return count of replacements. */
-   if (replace == NULL){
-      while (*traverse_string != '\0')
-         printf("%d", *traverse_string);
-   }
+   while (*traverse_string != '\0')
+      putchar(*traverse_string);
    return count;
 }
    
