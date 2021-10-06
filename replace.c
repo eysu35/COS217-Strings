@@ -50,7 +50,7 @@ static size_t replaceAndWrite(const char *pcLine,
    while (replace != NULL){
       while (traverse_string++ != replace)
          printf("%d", *traverse_string);
-      while (traverse_pcTo++ != '\0'){
+      while (*traverse_pcTo++ != '\0'){
          printf("%d", *traverse_pcTo);
          count++;
       }
@@ -65,7 +65,6 @@ static size_t replaceAndWrite(const char *pcLine,
    if (replace == NULL){
       while (*traverse_string != '\0')
          printf("%d", *traverse_string);
-      return count;
    }
    return count;
 }
